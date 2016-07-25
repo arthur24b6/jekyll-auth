@@ -7,14 +7,14 @@ class JekyllAuth
     use_static_index 'index.html'
 
     # Rewrite calls to .html files if they exist.
-    # get '/:path' do
-    #   file = File.join(File.expand_path(settings.public_folder, Dir.pwd), "#{params['path']}.html")
-    #   if File.exists?(file)
-    #     File.read(file)
-    #   else
-    #     not_found
-    #   end
-    # end
+    get '/:path' do
+      file = File.join(File.expand_path(settings.public_folder, Dir.pwd), "#{params['path']}.html")
+      if File.exists?(file)
+        File.read(file)
+      else
+        not_found
+      end
+    end
 
     not_found do
       status 404
