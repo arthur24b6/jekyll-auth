@@ -6,25 +6,15 @@ class JekyllAuth
   def self.jekyll_config
     @config ||= begin
       jekyll_config = YAML.safe_load_file(config_file)
-    rescue
-      {}
     end
   end
 
   def self.destination
-    @config ||= begin
-      JekyllAuth.jekyll_config['destination'] || '_site'
-    rescue
-      {}
-    end
+    JekyllAuth.jekyll_config['destination'] || '_site'
   end
 
   def self.config
-    @config ||= begin
-      JekyllAuth.jekyll_config['jekyll_auth'] || {}
-    rescue
-      {}
-    end
+    JekyllAuth.jekyll_config['jekyll_auth'] || {}
   end
 
   def self.whitelist
