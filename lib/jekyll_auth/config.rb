@@ -10,15 +10,15 @@ class JekyllAuth
   end
 
   def self.destination
-      JekyllAuth.jekyll_config['destination'] || '_site'
+    JekyllAuth.jekyll_config['destination'] || '_site'
   end
 
   def self.config
-      JekyllAuth.jekyll_config['jekyll_auth'] || {}
+    JekyllAuth.jekyll_config['jekyll_auth'] || {}
   end
 
   def self.whitelist
-    whitelist = JekyllAuth.jekyll_config['whitelist']
+    whitelist = JekyllAuth.config['whitelist']
     Regexp.new(whitelist.join('|')) unless whitelist.nil?
   end
 
