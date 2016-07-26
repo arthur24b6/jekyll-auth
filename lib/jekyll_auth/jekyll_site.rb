@@ -5,7 +5,7 @@ class JekyllAuth
     puts JekyllAuth.jekyll_config.inspect
     puts destination.inspect
 
-    test = YAML.safe_load_file(JekyllAuth.config_file)
+    test = YAML.safe_load_file(JekyllAuth.config_file) || '_site'
     puts test['destination'].inspect
 
     set :public_folder, File.expand_path(test['destination'], Dir.pwd)
