@@ -5,8 +5,8 @@ class JekyllAuth
     puts JekyllAuth.jekyll_config.inspect
     puts destination.inspect
 
-    test =YAML.safe_load_file(JekyllAuth.config_file)
-    puts test.inspect
+    test = YAML.safe_load_file(JekyllAuth.config_file)
+    puts test['destination'].inspect
 
     set :public_folder, File.expand_path('../docs', Dir.pwd)
     use_static_index 'index.html'
