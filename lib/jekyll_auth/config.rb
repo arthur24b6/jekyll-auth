@@ -6,6 +6,7 @@ class JekyllAuth
   def self.jekyll_config
     @config ||= begin
       jekyll_config = YAML.safe_load_file(config_file)
+      puts jekyll_config.inspect
     rescue
       {}
     end
@@ -33,6 +34,6 @@ class JekyllAuth
   end
 
   def self.ssl?
-    !!JekyllAuth.jekyllConfig['ssl']
+    !!JekyllAuth.jekyll_config['ssl']
   end
 end
