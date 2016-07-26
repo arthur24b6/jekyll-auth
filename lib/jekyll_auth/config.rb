@@ -10,6 +10,7 @@ class JekyllAuth
   end
 
   def self.destination
+    puts JekyllAuth.jekyll_config.inspect
     JekyllAuth.jekyll_config['destination'] || '_site'
   end
 
