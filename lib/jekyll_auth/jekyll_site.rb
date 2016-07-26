@@ -3,7 +3,8 @@ class JekyllAuth
     register Sinatra::Index
     destination = JekyllAuth.destination
     puts JekyllAuth.jekyll_config.inspect
-    set :public_folder, File.expand_path(destination, Dir.pwd)
+    puts destination.inspect
+    set :public_folder, File.expand_path('../docs', Dir.pwd)
     use_static_index 'index.html'
 
     # Rewrite calls to .html files if they exist.
