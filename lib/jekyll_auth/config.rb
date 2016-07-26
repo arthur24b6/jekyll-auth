@@ -10,7 +10,8 @@ class JekyllAuth
   end
 
   def self.destination
-    JekyllAuth.jekyll_config['destination'] || '_site'
+    config = JekyllAuth.jekyll_config
+    config['destination'] || '_site'
   end
 
   def self.config
