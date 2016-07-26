@@ -5,10 +5,11 @@ class JekyllAuth
     puts JekyllAuth.jekyll_config.inspect
     puts destination.inspect
 
-    test = YAML.safe_load_file(JekyllAuth.config_file) || '_site'
+    test = YAML.safe_load_file(JekyllAuth.config_file)
     puts test['destination'].inspect
+    destination = test['destination'] || '_site'
 
-    set :public_folder, File.expand_path(test['destination'], Dir.pwd)
+    set :public_folder, File.expand_path(destination, Dir.pwd)
     use_static_index 'index.html'
 
     # Rewrite calls to .html files if they exist.
