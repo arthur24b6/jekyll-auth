@@ -11,12 +11,10 @@ class JekyllAuth
 
   def self.destination
       JekyllAuth.jekyll_config['destination'] || '_site'
-
   end
 
   def self.config
       JekyllAuth.jekyll_config['jekyll_auth'] || {}
-
   end
 
   def self.whitelist
