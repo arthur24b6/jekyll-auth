@@ -5,12 +5,11 @@ class JekyllAuth
 
   def self.jekyll_config
     @config ||= begin
-      jekyll_config = YAML.safe_load_file(config_file)
+      YAML.safe_load_file(config_file)
     end
   end
 
   def self.destination
-    puts JekyllAuth.jekyll_config.inspect
     JekyllAuth.jekyll_config['destination'] || '_site'
   end
 
