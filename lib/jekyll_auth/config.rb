@@ -10,17 +10,13 @@ class JekyllAuth
   end
 
   def self.destination
-    @config ||= begin
       JekyllAuth.jekyll_config['destination'] || '_site'
-    end
+
   end
 
   def self.config
-    @config ||= begin
       JekyllAuth.jekyll_config['jekyll_auth'] || {}
-    rescue
-      {}
-    end
+
   end
 
   def self.whitelist
