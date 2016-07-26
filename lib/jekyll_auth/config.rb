@@ -34,6 +34,6 @@ class JekyllAuth
   end
 
   def self.ssl?
-    !!JekyllAuth.jekyll_config['ssl']
+    JekyllAuth.jekyll_config['ssl'] || {}
   end
 end
